@@ -1,0 +1,3 @@
+D:/Programming/1945/build/CMakeFiles/SDLWindowPrj.dir
+D:/Programming/1945/build/CMakeFiles/ALL_BUILD.dir
+D:/Programming/1945/build/CMakeFiles/ZERO_CHECK.dir
