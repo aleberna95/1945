@@ -7,7 +7,11 @@
                 "${workspaceFolder}/cmake/sdl2_ttf/include",
                 "${workspaceFolder}/include",
                 "${workspaceFolder}/include/collections",
-                "${workspaceFolder}/include/engine"
+                "${workspaceFolder}/include/engine",
+                "${workspaceFolder}/cmake/sdl2/include",
+                "${workspaceFolder}/cmake/sdl2_ttf/include",
+                "${workspaceFolder}/cmake/sdl2_image/include",
+                "${workspaceFolder}/cmake/sdl2_mixer/include"
             ],
             "defines": [
                 "_DEBUG",

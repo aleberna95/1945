@@ -42,8 +42,9 @@ foreach (_variableName ${_variableNames})
   message(STATUS "${_variableName}=${${_variableName}}")
 endforeach()
 ]] 
-
-add_executable(SDLWindowPrj src/main.c)
+file(GLOB SOURCES "src/*.c" "src/collections/*.c" "src/engine/*.c")
+file(GLOB HEADERS "include/*.h" "include/collections/*.h" "include/engine/*.h")
+add_executable(SDLWindowPrj ${SOURCES} ${HEADERS})
 # link diretto sulla .lib
 target_link_libraries(SDLWindowPrj 
   ${SDL2_LIBRARY}
@@ -58,6 +59,8 @@ target_include_directories(SDLWindowPrj
     ${SDL2TTF_INCLUDE_DIR} 
     ${SDL2_MIXER_INCLUDE_DIR}  
     include
+    include/collections
+    include/engine
 )
 
 #Per Windows: il file .exe ha bisogno della .dll vicino a se.
