@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Release/SDLWindowPrj.exe"
+			"path" : "RelWithDebInfo/SDLWindowPrj.exe"
 		},
 		{
-			"path" : "Release/SDLWindowPrj.pdb"
+			"path" : "RelWithDebInfo/SDLWindowPrj.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -52,7 +52,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /O2 /Ob2 /DNDEBUG -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /Zi /O2 /Ob1 /DNDEBUG -MD"
 				}
 			],
 			"includes" : 
@@ -84,6 +84,10 @@
 				{
 					"backtrace" : 3,
 					"path" : "D:/Programming/1945/include/engine"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Programming/1945/include/components"
 				}
 			],
 			"language" : "C",
@@ -96,7 +100,11 @@
 				4,
 				5,
 				6,
-				7
+				7,
+				8,
+				9,
+				10,
+				11
 			]
 		}
 	],
@@ -112,11 +120,11 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /O2 /Ob2 /DNDEBUG -MD",
+				"fragment" : "/DWIN32 /D_WINDOWS /Zi /O2 /Ob1 /DNDEBUG -MD",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
 				"role" : "flags"
 			},
 			{
@@ -166,21 +174,30 @@
 				4,
 				5,
 				6,
-				7
+				7,
+				8,
+				9,
+				10,
+				11
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				8,
-				9,
-				10,
-				11,
 				12,
 				13,
 				14,
-				15
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24
 			]
 		}
 	],
@@ -196,6 +213,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/collections/list.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/collections/queue.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -225,7 +248,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/engine/graphicsManager.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/engine/rigidBody.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/engine/sprite.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/engine/updateManager.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -251,7 +292,17 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "include/collections/queue.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
 			"path" : "include/collections/vector.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/components/componentBehaviour.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -271,7 +322,22 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "include/engine/graphicsManager.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/engine/rigidBody.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
 			"path" : "include/engine/sprite.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/engine/updateManager.h",
 			"sourceGroupIndex" : 1
 		}
 	],

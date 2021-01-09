@@ -1,16 +1,16 @@
 Determining if the include file pthread.h exists failed with the following output:
 Change Dir: D:/Programming/1945/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe cmTC_25f4d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=15.0 /v:m && Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe cmTC_bb326.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=15.0 /v:m && Microsoft (R) Build Engine version 15.9.21+g9802d43bc3 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Microsoft (R) C/C++ Optimizing Compiler versione 19.16.27043 per x64
   Copyright (C) Microsoft Corporation. Tutti i diritti  sono riservati.
   
-  cl /c /Zi /W1 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_25f4d.dir\Debug\\" /Fd"cmTC_25f4d.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue D:\Programming\1945\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cl /c /Zi /W1 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bb326.dir\Debug\\" /Fd"cmTC_bb326.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue D:\Programming\1945\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
   CheckIncludeFile.c
   
-D:\Programming\1945\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: Non è possibile aprire il file inclusione: 'pthread.h': No such file or directory [D:\Programming\1945\build\CMakeFiles\CMakeTmp\cmTC_25f4d.vcxproj]
+D:\Programming\1945\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: Non è possibile aprire il file inclusione: 'pthread.h': No such file or directory [D:\Programming\1945\build\CMakeFiles\CMakeTmp\cmTC_bb326.vcxproj]
 
 
 

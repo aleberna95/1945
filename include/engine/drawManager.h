@@ -5,6 +5,7 @@
 #include <SDL_ttf.h>
 #include <SDL_image.h>
 #include "list.h"
+#include "sprite.h"
 
 typedef struct
 {
@@ -12,6 +13,7 @@ typedef struct
 } drawManager;
 
 drawManager *newDrawManager();
+void add_render_element(drawManager* drwManager, sprite* sprite);
 void draw_elements(SDL_Renderer *renderer, drawManager *drwMgr);
 
 #endif

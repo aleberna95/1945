@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -102,10 +102,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -313,7 +313,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -329,10 +329,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -540,7 +540,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -556,10 +556,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -767,7 +767,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>
@@ -782,10 +782,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\1945\cmake\sdl2\include;D:\Programming\1945\cmake\sdl2_image\include;D:\Programming\1945\cmake\sdl2_ttf\include;D:\Programming\1945\cmake\sdl2_mixer\include;D:\Programming\1945\include;D:\Programming\1945\include\collections;D:\Programming\1945\include\engine;D:\Programming\1945\include\components;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -1050,20 +1050,29 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="D:\Programming\1945\src\collections\dict.c" />
     <ClCompile Include="D:\Programming\1945\src\collections\list.c" />
+    <ClCompile Include="D:\Programming\1945\src\collections\queue.c" />
     <ClCompile Include="D:\Programming\1945\src\collections\vector.c" />
     <ClCompile Include="D:\Programming\1945\src\engine\drawManager.c" />
     <ClCompile Include="D:\Programming\1945\src\engine\game.c" />
     <ClCompile Include="D:\Programming\1945\src\engine\gameObject.c" />
+    <ClCompile Include="D:\Programming\1945\src\engine\graphicsManager.c" />
+    <ClCompile Include="D:\Programming\1945\src\engine\rigidBody.c" />
     <ClCompile Include="D:\Programming\1945\src\engine\sprite.c" />
+    <ClCompile Include="D:\Programming\1945\src\engine\updateManager.c" />
     <ClCompile Include="D:\Programming\1945\src\main.c" />
     <ClInclude Include="D:\Programming\1945\include\collections\common.h" />
     <ClInclude Include="D:\Programming\1945\include\collections\dict.h" />
     <ClInclude Include="D:\Programming\1945\include\collections\list.h" />
+    <ClInclude Include="D:\Programming\1945\include\collections\queue.h" />
     <ClInclude Include="D:\Programming\1945\include\collections\vector.h" />
+    <ClInclude Include="D:\Programming\1945\include\components\componentBehaviour.h" />
     <ClInclude Include="D:\Programming\1945\include\engine\drawManager.h" />
     <ClInclude Include="D:\Programming\1945\include\engine\game.h" />
     <ClInclude Include="D:\Programming\1945\include\engine\gameObject.h" />
+    <ClInclude Include="D:\Programming\1945\include\engine\graphicsManager.h" />
+    <ClInclude Include="D:\Programming\1945\include\engine\rigidBody.h" />
     <ClInclude Include="D:\Programming\1945\include\engine\sprite.h" />
+    <ClInclude Include="D:\Programming\1945\include\engine\updateManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Programming\1945\build\ZERO_CHECK.vcxproj">

@@ -3,12 +3,16 @@
 #include <SDL_ttf.h>
 #include <SDL_image.h>
 
+#include "list.h"
 #include "common.h"
+#include "dict.h"
+
 #include "game.h"
 #include "gameObject.h"
 #include "sprite.h"
-#include "list.h"
 #include "drawManager.h"
+#include "updateManager.h"
+
 int start_game(int w, int h)
 {
 
@@ -44,26 +48,14 @@ int start_game(int w, int h)
     float time_counter = 0.f;
 
     //test start
-    drawManager* drawMgr = newDrawManager();
+    drawManager *drawMgr = newDrawManager();
+    graphicsManager *graphMgr = NewGraphicManager();
+    updateManager* updateMgr = create_updateMgr();
 
-    SDL_Surface *bmp_surface = IMG_Load("resources/map/island1.png");
-    SDL_Surface *bmp_surface2 = IMG_Load("resources/map/island2.png");
-    SDL_Surface *bmp_surface3 = IMG_Load("resources/map/island2.png");
-
-    sprite* sp = newSprite(renderer, bmp_surface);
-    sprite* sp2 = newSprite(renderer, bmp_surface2);
-    sprite*sp3 = newSprite(renderer, bmp_surface3);
-
-    gameObject* go = new_gameObject(sp, 25, 25);
-    gameObject* go2 = new_gameObject(sp2, 100, 100);
-    gameObject* go3 = new_gameObject(sp3, 300, 300);
-
-    list_add(drawMgr->gameObjs, go->sprite); 
-    list_add(drawMgr->gameObjs, go2->sprite);
-    list_add(drawMgr->gameObjs, go3->sprite);
+    sprite* sp = newSprite(renderer, "resources/player/myplane_strip3.png", 59, 43, 3, 13);
+    gameObject* player = new_gameObject(updateMgr, drawMgr, sp, 59, 43, 300, 200);
 
     //test end
-
 
     boolean done = false;
     while (!done)
@@ -95,6 +87,7 @@ int start_game(int w, int h)
         SDL_RenderClear(renderer);
 
         //update
+        update_elements(updateMgr, delta_time);
 
         //draw
         draw_elements(renderer, drawMgr);
@@ -110,3 +103,29 @@ int start_game(int w, int h)
 
     return 0;
 }
+
+// void LoadTextures(SDL_Renderer *renderer, graphicsManager *graphMgr)
+// {
+//     puts("load step0");
+//     SDL_Surface *bmp_surface = IMG_Load("resources/map/island1.png");
+//     sprite *sp = newSprite(renderer, bmp_surface);
+//     char key[] = "Player";
+//     uint keylen = sizeof(key);
+//     puts("accipicchia");
+//     dict_put(&graphMgr->textures, *key, keylen, &sp);
+
+//     puts("load step1");
+//     SDL_Surface *bmp_surface2 = IMG_Load("resources/map/island2.png");
+//     sprite *sp1 = newSprite(renderer, bmp_surface2);
+//     char key1[] = "PeneGommoso";
+//     uint keylen1 = sizeof(key1);
+//     dict_put(&graphMgr->textures, *key1, keylen1, &sp1);
+
+//     puts("load step2");
+//     SDL_Surface *bmp_surface3 = IMG_Load("resources/map/island2.png");
+//     sprite *sp2 = newSprite(renderer, bmp_surface3);
+//     char key2[] = "Isola";
+//     uint keylen2 = sizeof(key2);
+//     dict_put(&graphMgr->textures, *key2, keylen2, &sp2);
+//     puts("load step2");
+// }

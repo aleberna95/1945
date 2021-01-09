@@ -3,13 +3,11 @@
 
 #include "common.h"
 
-struct vector {
+typedef struct  {
     void** __items;
     unsigned int __count;
     unsigned int __capacity;
-};
-
-typedef struct vector vector;
+}vector;
 
 vector* new_vector();
 vector* new_with_cap_vector(uint capacity);

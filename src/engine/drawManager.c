@@ -1,13 +1,15 @@
 #include "drawManager.h"
 #include "gameObject.h"
-#include "sprite.h"
-#include "list.h"
 
 drawManager *newDrawManager()
 {
     drawManager *drwMgr = malloc(sizeof(drawManager));
     drwMgr->gameObjs = new_list();
     return drwMgr;
+}
+
+void add_render_element(drawManager* drwManager, sprite* _sprite){
+    list_add(drwManager->gameObjs, _sprite);
 }
 
 void draw_elements(SDL_Renderer *renderer, drawManager *drwMgr)
