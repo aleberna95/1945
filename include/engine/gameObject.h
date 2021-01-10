@@ -1,13 +1,17 @@
 #ifndef GAME_OBJECT_H
 #define GAME_OBJECT_H
 
+#include "common.h"
 #include "vector.h"
 #include "sprite.h"
 #include "drawManager.h"
 #include "updateManager.h"
+#include "rigidBody.h"
 
 typedef struct 
 {
+    rigidBody* rb;
+    boolean isActive;
     float position_x;
     float position_y;
     float width;

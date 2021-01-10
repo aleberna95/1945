@@ -12,10 +12,10 @@
 #include "sprite.h"
 #include "drawManager.h"
 #include "updateManager.h"
+#include "simpleMovement_comp.h"
 
 int start_game(int w, int h)
 {
-
     SDL_Init(SDL_INIT_VIDEO);
 
     SDL_Window *window = SDL_CreateWindow(
@@ -47,15 +47,25 @@ int start_game(int w, int h)
     float update_time = 0.f;
     float time_counter = 0.f;
 
-    //test start
+    //init manager
     drawManager *drawMgr = newDrawManager();
     graphicsManager *graphMgr = NewGraphicManager();
     updateManager* updateMgr = create_updateMgr();
 
-    sprite* sp = newSprite(renderer, "resources/player/myplane_strip3.png", 59, 43, 3, 13);
-    gameObject* player = new_gameObject(updateMgr, drawMgr, sp, 59, 43, 300, 200);
+    //INIT ACTORS
 
-    //test end
+    //player
+    sprite* playerSprite = newSprite(renderer, "resources/player/myplane_strip3.png", 59, 43, 3, 13);
+    gameObject* player = new_gameObject(updateMgr, drawMgr, playerSprite, playerSprite->sprite_width, playerSprite->sprite_height, 300, 200);
+    simpleMovement_comp* playerInput = simpleMovement(player, 150.f);
+
+
+
+
+    //enemy
+    sprite* enemySTDSprite = newSprite(renderer, "resources/enemy/enemy1_strip3.png", 32, 31, 0, 1);
+    gameObject* enemySTD0 = new_gameObject(updateMgr, drawMgr, enemySTDSprite, enemySTDSprite->sprite_width, enemySTDSprite->sprite_height, 320, 35);
+    simpleMovement_comp* enemyMovement = simpleMovement(enemySTD0, 100.f);
 
     boolean done = false;
     while (!done)
@@ -86,10 +96,15 @@ int start_game(int w, int h)
         // Clear
         SDL_RenderClear(renderer);
 
+        //input
+        inputSystem(playerInput, delta_time);
+        autoMovement(enemyMovement, delta_time);
+
         //update
         update_elements(updateMgr, delta_time);
 
         //draw
+
         draw_elements(renderer, drawMgr);
 
         // Blit

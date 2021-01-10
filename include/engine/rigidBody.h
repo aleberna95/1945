@@ -1,19 +1,18 @@
 #ifndef RIGIBODY_H
 #define RIGIBODY_H
 
-#include "gameObject.h"
+#include "common.h"
 
 typedef struct 
 {
-    gameObject* owner;
+    boolean isActive;
     float x;
     float y; 
-    float width;
-    float height;
-    float speed;
+    float radius;
+    float speed_x;
+    float speed_y;
 }rigidBody;
 
-rigidBody* newRigidbody(gameObject*owner, float speed);
-
+void rb_update(rigidBody* rb, float deltaTime);
 
 #endif

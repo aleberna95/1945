@@ -8,14 +8,19 @@ drawManager *newDrawManager()
     return drwMgr;
 }
 
-void add_render_element(drawManager* drwManager, sprite* _sprite){
-    list_add(drwManager->gameObjs, _sprite);
+void add_render_element(drawManager *drwManager, void *go)
+{
+    list_add(drwManager->gameObjs, (gameObject*) go);
 }
 
 void draw_elements(SDL_Renderer *renderer, drawManager *drwMgr)
 {
     for (uint i = 1; i <= drwMgr->gameObjs->count; i++)
     {
-        drawSprite(renderer, (sprite *)(list_elem_at(drwMgr->gameObjs, i)));
+        gameObject *go = list_elem_at(drwMgr->gameObjs, i);
+        if (go->isActive)
+        {
+            drawSprite(renderer, go->sprite);
+        }
     }
 }

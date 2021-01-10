@@ -1052,6 +1052,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Programming\1945\src\collections\list.c" />
     <ClCompile Include="D:\Programming\1945\src\collections\queue.c" />
     <ClCompile Include="D:\Programming\1945\src\collections\vector.c" />
+    <ClCompile Include="D:\Programming\1945\src\components\shootManager.c" />
+    <ClCompile Include="D:\Programming\1945\src\components\simpleMovement_comp.c" />
     <ClCompile Include="D:\Programming\1945\src\engine\drawManager.c" />
     <ClCompile Include="D:\Programming\1945\src\engine\game.c" />
     <ClCompile Include="D:\Programming\1945\src\engine\gameObject.c" />
@@ -1065,7 +1067,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Programming\1945\include\collections\list.h" />
     <ClInclude Include="D:\Programming\1945\include\collections\queue.h" />
     <ClInclude Include="D:\Programming\1945\include\collections\vector.h" />
-    <ClInclude Include="D:\Programming\1945\include\components\componentBehaviour.h" />
+    <ClInclude Include="D:\Programming\1945\include\components\shootManager.h" />
+    <ClInclude Include="D:\Programming\1945\include\components\simpleMovement_comp.h" />
     <ClInclude Include="D:\Programming\1945\include\engine\drawManager.h" />
     <ClInclude Include="D:\Programming\1945\include\engine\game.h" />
     <ClInclude Include="D:\Programming\1945\include\engine\gameObject.h" />
