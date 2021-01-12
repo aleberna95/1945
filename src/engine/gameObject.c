@@ -8,19 +8,20 @@ gameObject *new_gameObject(updateManager *updateMgr, drawManager *drawMgr, sprit
     {
         go->sprite = _sprite;
     }
+    go->components = new_list();
     go->position_x = pos_x;
     go->position_y = pos_y;
     go->width = width;
     go->height = height;
     go->update = update;
     go->isActive = true;
+
     _sprite->width = width;
     _sprite->height = height;
-
     _sprite->x_pivot = go->position_x - _sprite->width * 0.5f;
     _sprite->y_pivot = go->position_y - _sprite->height * 0.5f;
 
-    rigidBody *rb = (rigidBody *)malloc(sizeof(rigidBody));
+    rigidBody *rb = initRb();
 
     rb->radius = go->height;
     rb->x = _sprite->x_pivot;
@@ -45,6 +46,19 @@ void update(void *self, float delta_time)
     gameObject *go = (gameObject *)(self);
     // go->sprite->x_pivot = go->position_x - go->width*0.5f;
     // go->sprite->y_pivot = go->position_y - go->height*0.5f;
-    go->sprite->x_pivot = go->rb->x;
-    go->sprite->y_pivot = go->rb->y;
+    if (go->isActive)
+    {
+        if (go->components->count > 0)
+        {
+            for (uint i = 1; i <= go->components->count; i++)
+            {
+               component* comp = list_elem_at(go->components, i);
+               comp->update(comp, delta_time);
+            }
+        }
+        go->position_x = go->rb->x;
+        go->position_y = go->rb->y;
+        go->sprite->x_pivot = go->rb->x;
+        go->sprite->y_pivot = go->rb->y;
+    }
 }

@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "RelWithDebInfo/SDLWindowPrj.exe"
+			"path" : "Debug/SDLWindowPrj.exe"
 		},
 		{
-			"path" : "RelWithDebInfo/SDLWindowPrj.pdb"
+			"path" : "Debug/SDLWindowPrj.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -52,7 +52,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /Zi /O2 /Ob1 /DNDEBUG -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd"
 				}
 			],
 			"includes" : 
@@ -88,6 +88,10 @@
 				{
 					"backtrace" : 3,
 					"path" : "D:/Programming/1945/include/components"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Programming/1945/include/game"
 				}
 			],
 			"language" : "C",
@@ -106,7 +110,10 @@
 				10,
 				11,
 				12,
-				13
+				13,
+				14,
+				15,
+				16
 			]
 		}
 	],
@@ -122,7 +129,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /Zi /O2 /Ob1 /DNDEBUG -MD",
+				"fragment" : "/DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd",
 				"role" : "flags"
 			},
 			{
@@ -182,16 +189,16 @@
 				10,
 				11,
 				12,
-				13
+				13,
+				14,
+				15,
+				16
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				14,
-				15,
-				16,
 				17,
 				18,
 				19,
@@ -202,7 +209,14 @@
 				24,
 				25,
 				26,
-				27
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34
 			]
 		}
 	],
@@ -235,7 +249,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/components/shootManager.c",
+			"path" : "src/components/bullet.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/components/component.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -248,12 +268,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/engine/drawManager.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/engine/game.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -289,6 +303,24 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/game/backgroundManager.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/game/enemyManager.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/game/game.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/main.c",
 			"sourceGroupIndex" : 0
 		},
@@ -319,7 +351,17 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/components/shootManager.h",
+			"path" : "include/components/behaviour.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/components/bullet.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/components/component.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -330,11 +372,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/engine/drawManager.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "include/engine/game.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -360,6 +397,21 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/engine/updateManager.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/game/backgroundManager.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/game/enemyManager.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/game/game.h",
 			"sourceGroupIndex" : 1
 		}
 	],

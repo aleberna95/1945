@@ -4,9 +4,9 @@
 #include <SDL_image.h>
 #include "sprite.h"
 
-sprite* newSprite(SDL_Renderer* renderer, char texturePath[], float sprite_width, float sprite_height, float x_offset, float y_offset){
+sprite* newSprite(SDL_Renderer* renderer, int layer, char texturePath[], float sprite_width, float sprite_height, float x_offset, float y_offset){
     sprite* spr = (sprite*)malloc(sizeof(sprite));
-
+    spr->layer = layer;
     SDL_Surface *bmp_surface = IMG_Load(texturePath);
     if (bmp_surface == NULL)
     {

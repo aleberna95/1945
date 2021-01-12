@@ -42,8 +42,8 @@ foreach (_variableName ${_variableNames})
   message(STATUS "${_variableName}=${${_variableName}}")
 endforeach()
 ]] 
-file(GLOB SOURCES "src/*.c" "src/collections/*.c" "src/engine/*.c" "src/components/*.c")
-file(GLOB HEADERS "include/*.h" "include/collections/*.h" "include/engine/*.h" "include/components/*.h")
+file(GLOB SOURCES "src/*.c" "src/collections/*.c" "src/engine/*.c" "src/components/*.c" "src/game/*.c")
+file(GLOB HEADERS "include/*.h" "include/collections/*.h" "include/engine/*.h" "include/components/*.h" "include/game/*.h")
 add_executable(SDLWindowPrj ${SOURCES} ${HEADERS})
 # link diretto sulla .lib
 target_link_libraries(SDLWindowPrj 
@@ -62,6 +62,7 @@ target_include_directories(SDLWindowPrj
     include/collections
     include/engine
     include/components
+    include/game
 )
 
 #Per Windows: il file .exe ha bisogno della .dll vicino a se.

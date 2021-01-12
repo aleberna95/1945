@@ -2,16 +2,18 @@
 #define GAME_OBJECT_H
 
 #include "common.h"
-#include "vector.h"
+#include "list.h"
 #include "sprite.h"
 #include "drawManager.h"
 #include "updateManager.h"
 #include "rigidBody.h"
+#include "component.h"
 
 typedef struct 
 {
     rigidBody* rb;
     boolean isActive;
+    list* components;
     float position_x;
     float position_y;
     float width;

@@ -8,11 +8,15 @@
 
 typedef struct
 {
-    list *gameObjs;
+    list *gameObjs0;
+    list *gameObjs1;
+    list *gameObjs2;
+    list *gameObjs3;
 } drawManager;
 
 drawManager *newDrawManager();
 void add_render_element(drawManager* drwManager, void* go);
 void draw_elements(SDL_Renderer *renderer, drawManager *drwMgr);
+void change(void* a, void* b);
 
 #endif

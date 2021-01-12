@@ -13,6 +13,6 @@ typedef struct
     float speed_y;
 }rigidBody;
 
-void rb_update(rigidBody* rb, float deltaTime);
+rigidBody* initRb();
 
 #endif

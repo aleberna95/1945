@@ -1,7 +1,7 @@
 #ifndef SIMPLE_MOVEMENT_H
 #define SIMPLE_MOVEMENT_H
 #include "gameObject.h"
-#include "shootManager.h"
+#include "bullet.h"
 
 typedef struct 
 {

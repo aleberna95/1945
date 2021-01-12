@@ -13,6 +13,9 @@
 #include "drawManager.h"
 #include "updateManager.h"
 #include "simpleMovement_comp.h"
+#include "enemyManager.h"
+#include "backgroundManager.h"
+#include "component.h"
 
 int start_game(int w, int h)
 {
@@ -50,22 +53,30 @@ int start_game(int w, int h)
     //init manager
     drawManager *drawMgr = newDrawManager();
     graphicsManager *graphMgr = NewGraphicManager();
-    updateManager* updateMgr = create_updateMgr();
+    updateManager *updateMgr = create_updateMgr();
 
     //INIT ACTORS
 
     //player
-    sprite* playerSprite = newSprite(renderer, "resources/player/myplane_strip3.png", 59, 43, 3, 13);
-    gameObject* player = new_gameObject(updateMgr, drawMgr, playerSprite, playerSprite->sprite_width, playerSprite->sprite_height, 300, 200);
-    simpleMovement_comp* playerInput = simpleMovement(player, 150.f);
+    sprite *playerSprite = newSprite(renderer, 0, "resources/player/myplane_strip3.png", 59, 43, 3, 13);
+    gameObject *player = new_gameObject(updateMgr, drawMgr, playerSprite, playerSprite->sprite_width, playerSprite->sprite_height, 300, 200);
+    simpleMovement_comp *playerInput = simpleMovement(player, 250.f);
+    component *animator = newComponent();
+    animator->data->owner = player;
+    animator->data->animation_duration = 0.2f;
+    animator->data->num_of_sprites = 3;
+    animator->data->counter = 0;
+    animator->data->index = 0;
+    animator->data->pixel_offset = 3;
+    animator->update = spriteChanger;
 
-
-
+    list_add(player->components, animator);
 
     //enemy
-    sprite* enemySTDSprite = newSprite(renderer, "resources/enemy/enemy1_strip3.png", 32, 31, 0, 1);
-    gameObject* enemySTD0 = new_gameObject(updateMgr, drawMgr, enemySTDSprite, enemySTDSprite->sprite_width, enemySTDSprite->sprite_height, 320, 35);
-    simpleMovement_comp* enemyMovement = simpleMovement(enemySTD0, 100.f);
+    enemyManager *enemyMgr = enemyManager_init(renderer, updateMgr, drawMgr, 1.5f, 640, 100.f, 20.f);
+
+    //background
+    backgroundManager *bgMgr = bg_manager_init(renderer, updateMgr, drawMgr, 40.f);
 
     boolean done = false;
     while (!done)
@@ -98,13 +109,14 @@ int start_game(int w, int h)
 
         //input
         inputSystem(playerInput, delta_time);
-        autoMovement(enemyMovement, delta_time);
+
+        spawn_enemy(enemyMgr, delta_time);
+        spawn_island(bgMgr, delta_time);
 
         //update
         update_elements(updateMgr, delta_time);
 
         //draw
-
         draw_elements(renderer, drawMgr);
 
         // Blit
@@ -119,28 +131,21 @@ int start_game(int w, int h)
     return 0;
 }
 
-// void LoadTextures(SDL_Renderer *renderer, graphicsManager *graphMgr)
-// {
-//     puts("load step0");
-//     SDL_Surface *bmp_surface = IMG_Load("resources/map/island1.png");
-//     sprite *sp = newSprite(renderer, bmp_surface);
-//     char key[] = "Player";
-//     uint keylen = sizeof(key);
-//     puts("accipicchia");
-//     dict_put(&graphMgr->textures, *key, keylen, &sp);
+void spriteChanger(void *comp, float delta_time)
+{
+    component *_comp = (component *)comp;
 
-//     puts("load step1");
-//     SDL_Surface *bmp_surface2 = IMG_Load("resources/map/island2.png");
-//     sprite *sp1 = newSprite(renderer, bmp_surface2);
-//     char key1[] = "PeneGommoso";
-//     uint keylen1 = sizeof(key1);
-//     dict_put(&graphMgr->textures, *key1, keylen1, &sp1);
+    _comp->data->counter += delta_time;
+    if (_comp->data->counter >= _comp->data->animation_duration)
+    {
+        _comp->data->counter = 0;
+        sprite *sprite = ((gameObject *)((component *)(comp))->data->owner)->sprite;
+        _comp->data->index++;
+        if (_comp->data->index >= _comp->data->num_of_sprites)
+        {
+        _comp->data->index = 0;
+        }
 
-//     puts("load step2");
-//     SDL_Surface *bmp_surface3 = IMG_Load("resources/map/island2.png");
-//     sprite *sp2 = newSprite(renderer, bmp_surface3);
-//     char key2[] = "Isola";
-//     uint keylen2 = sizeof(key2);
-//     dict_put(&graphMgr->textures, *key2, keylen2, &sp2);
-//     puts("load step2");
-// }
+        sprite->x_sprite_offset = _comp->data->pixel_offset + ((_comp->data->pixel_offset*2) + sprite->sprite_width) * _comp->data->index;
+    }
+}

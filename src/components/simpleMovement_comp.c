@@ -11,7 +11,7 @@ simpleMovement_comp *simpleMovement(gameObject *owner, float speed)
 
 void inputSystem(simpleMovement_comp *comp, float deltaTime)
 {
-    Uint8 *state = SDL_GetKeyboardState(NULL);
+    const Uint8 *state = SDL_GetKeyboardState(NULL);
     if (state[SDL_SCANCODE_LEFT])
     {
         comp->owner->rb->x -= comp->speed * deltaTime;
@@ -37,5 +37,6 @@ void inputSystem(simpleMovement_comp *comp, float deltaTime)
 
 void autoMovement(simpleMovement_comp *comp, float deltaTime)
 {
+    if(comp->owner->isActive)
     comp->owner->rb->y += comp->speed * deltaTime;
 }
